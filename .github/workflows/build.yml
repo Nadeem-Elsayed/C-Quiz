@@ -11,11 +11,10 @@ jobs:
       - uses: actions/checkout@v4		
 
       - name: build quiz			
-        run: gcc -o quiz hello.c		
+        run: gcc -o quiz quiz.c		
 
       - name: upload binary			
         uses: actions/upload-artifact@v4	
         with:
           name: Quiz Program			
-          path: ./quiz				
-
+          path: ./quiz
