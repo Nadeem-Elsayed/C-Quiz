@@ -1,0 +1,15 @@
+#!/bin/bash
+#this program adds, commits, tags, and pushes
+
+#store the current location
+
+#if the argument is empty
+if [[ "$2" = "" ]]
+then
+        echo 'No Description Specified'
+else
+        git add --all
+        git commit -m "$1"
+	git tag -a -m "$2"
+        git push
+fi
