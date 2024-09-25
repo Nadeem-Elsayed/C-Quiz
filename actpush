@@ -4,12 +4,14 @@
 #store the current location
 
 #if the argument is empty
-if [[ "$2" = "" ]]
+if [[ "$3" = "" ]]
 then
         echo 'No Description Specified'
+	echo 'Usage:'
+	echo 'actpush "commit name" "semantic tag name" "tag description"'
 else
         git add --all
         git commit -m "$1"
-	git tag -a -m "$2"
+	git tag -a "$2" -m "$3"
         git push
 fi
